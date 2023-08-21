@@ -1,0 +1,28 @@
+global:
+
+  namespace: dev-app
+
+  saName: vault-auth
+
+  externalSecretName: app
+
+  externalSecret:
+    - secretKey: user # ключ секрета
+      remoteRef:
+        key: dev/app # путь до секрета в vault
+        property: user # ключ секрета в vault
+    - secretKey: password
+      remoteRef:
+        key: dev/app
+        property: password
+        property: vk-app-key
+
+
+  secretStore:
+    name: app
+    kvVersion: v2
+    url: http://vault.vault:8200
+    path: projects
+    role: read-secret
+
+  
