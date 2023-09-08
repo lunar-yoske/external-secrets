@@ -15,7 +15,6 @@ global:
       remoteRef:
         key: dev/app
         property: password
-        property: vk-app-key
 
 
   secretStore:
